@@ -1,4 +1,4 @@
-package tests.day15;
+package tests.day15_SoftAssert;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -28,7 +28,7 @@ public class C03_PozitifLoginTesti {
         qualitydemyPage.loginButonu.click();
 
         // 6- Basarili olarak giris yapilabildigini test edin
-        Assert.assertTrue(qualitydemyPage.basariliGirisCourssesLinki.isDisplayed());
+        Assert.assertTrue(qualitydemyPage.basariliGirisCoursesLinki.isDisplayed());
 
         Driver.closeDriver();
 

@@ -10,19 +10,21 @@ public class QualitydemyPage {
     public QualitydemyPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+
     @FindBy(xpath = "//*[text()='Log in']")
     public WebElement ilkLoginLinki;
 
-    @FindBy(id = "login-email")
+    @FindBy(id="login-email")
     public WebElement kullaniciEmailKutusu;
 
-    @FindBy(id = "login-password")
+    @FindBy(id="login-password")
     public WebElement passwordKutusu;
 
     @FindBy(xpath = "//button[text()='Login']")
     public WebElement loginButonu;
 
     @FindBy(linkText = "My courses")
-    public WebElement basariliGirisCourssesLinki;
+    public WebElement basariliGirisCoursesLinki;
+
 
 }
