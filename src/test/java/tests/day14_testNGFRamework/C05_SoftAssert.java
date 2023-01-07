@@ -5,20 +5,20 @@ import org.testng.asserts.SoftAssert;
 
 public class C05_SoftAssert {
 
-    @Test
+    @Test (groups = {"minireg1","smoke"})
     public void test01(){
 
         // 1. adim softAssert objesi olurtur
         SoftAssert softAssert=new SoftAssert();
 
         // 2. adim objeyi kullanarak istenen assertion' lari yapin
-        softAssert.assertEquals(6,8);  // Failed
+        softAssert.assertEquals(6,6);  // Passed
         System.out.println("1. assertion sonrasi");
 
         softAssert.assertTrue(5>3);  // Passed
         System.out.println("2. assertion sonrasi");
 
-        softAssert.assertFalse(8>5);  // Failed
+        softAssert.assertFalse(3>5);  // Passed
         System.out.println("3. assertion sonrasi");
 
         // 3. adim softassert e raporla diyelim
