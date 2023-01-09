@@ -1,5 +1,9 @@
 package tests.day16_SmokeTests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.QualitydemyPage;
@@ -14,19 +18,23 @@ public class C01_PozitifLoginTest {
 
         // qualitydemy anasayfaya git
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
-
-        QualitydemyPage qualitydemyPage= new QualitydemyPage();
+        QualitydemyPage qualitydemyPage=new QualitydemyPage();
         qualitydemyPage.ilkLoginLinki.click();
 
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));
         qualitydemyPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecerliPassword"));
 
-        qualitydemyPage.loginButonu.click();
+        Driver.getDriver().findElement(By.xpath("//a[text()='Accept']")).click();
+        ReusableMethods.bekle(2);
+
+       qualitydemyPage.loginButonu.click();
 
         ReusableMethods.bekle(2);
 
-
         Assert.assertTrue(qualitydemyPage.basariliGirisCoursesLinki.isDisplayed());
+
         Driver.closeDriver();
+
+
     }
 }
